@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1 id="head">DAVCOIN</h1>
+  <p id="val" >Value: 5</p>
+  <p id="cash" >Cash: 20</p>
+  <p id="own" >Owned: 0</p>
+  <input class="input" type="number" id="hm">
+  <button id="buy" onclick="buy(parseInt(document.getElementById('hm').value))">BUY</button>
+  <button id="sell" onclick="sell(parseInt(document.getElementById('hm').value))">SELL</button>
+  <p> </p>
+  <h2 id="mods">MODS</h2>
+  <p> </p>
+  <a id="list" href="mods.html" target="_blank">Mod List</a>
+  <p> </p>
+  <input class="input" type="text" id="modLoad">
+  <button id="load" onclick="mod(document.getElementById('modLoad').value)">LOAD</button>
+  <p>set it to clear to clear mods</p>
+  <script src="script.js"></script>
+</body>
+
+</html>

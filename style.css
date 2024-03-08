@@ -1,0 +1,50 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: yellow;
+}
+#head {
+  background-color: #ff5050;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#buy {
+  background-color: #ff0000;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#sell {
+  background-color: #00ff11;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#mods {
+  background-color: #ff5050;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#load {
+  background-color: #00ff11;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#list {
+  background-color: #ff5050;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.input {
+  background-color: #0062ff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
