@@ -50,6 +50,7 @@ async function load(mod) {
     script.onload = () => {
       console.log(`${mod} loaded successfully!`);
       currentMod = mod;
+      save(); // Save currentMod after setting it
     };
     script.onerror = (error) => {
       console.error(`Error ${mod}:`, error);
