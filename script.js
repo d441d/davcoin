@@ -22,7 +22,7 @@ async function update() {
   document.getElementById('val').textContent = "Value: " + String(val);
   document.getElementById('cash').textContent = "Cash: " + String(cash);
   document.getElementById('own').textContent = "Owned: " + String(own);
-  save()
+  save(currentMod)
 }
 
 setInterval(update, 500);
@@ -73,7 +73,7 @@ async function mod(mod) {
       }
       delete data.mod;
       localStorage.setItem('data', JSON.stringify(data));
-      alert('Mod cleared, refresh page to see changes');
+      alert('Mods cleared, refresh page to see changes');
     } else {
       alert('No data found');
     }
@@ -90,12 +90,13 @@ async function mod(mod) {
     }
     currentMod = mod;
     data.mod = currentMod;
+    save(mod);
     localStorage.setItem('data', JSON.stringify(data));
-    alert('Mod loaded, refresh page to see changes');
+    alert('Mod added, refresh page to see changes');
   }
 }
 
-async function save() {
+async function save(m) {
   let datastr = localStorage.getItem('data');
   if (datastr) {
     try {
@@ -103,7 +104,7 @@ async function save() {
           val: val,
           cash: cash,
           own: own,
-          mod: currentMod
+          mod: m
       };
 
       localStorage.setItem('data', JSON.stringify(data));
@@ -133,5 +134,4 @@ window.onload = function() {
     } else {
         console.log("No data.");
     }
-    document.createElement('p').textContent = "WORK"
 }
