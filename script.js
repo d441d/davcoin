@@ -88,26 +88,23 @@ async function mod(mod) {
     } else {
       data = {};
     }
-    data.mod = mod;
     currentMod = mod;
+    data.mod = currentMod;
     localStorage.setItem('data', JSON.stringify(data));
     alert('Mod loaded, refresh page to see changes');
   }
 }
 
 async function save() {
-  datastr = localStorage.getItem('data')
+  let datastr = localStorage.getItem('data');
   if (datastr) {
     try {
       let data = {
           val: val,
           cash: cash,
           own: own,
+          mod: currentMod
       };
-
-      if (isLoaded == true) {
-        data.mod = currentMod;
-      }
 
       localStorage.setItem('data', JSON.stringify(data));
     } catch (error) {
@@ -115,6 +112,7 @@ async function save() {
     }
   }
 }
+
 
 
 window.onload = function() {
@@ -136,7 +134,3 @@ window.onload = function() {
         console.log("No data.");
     }
 }
-
-
-
-
