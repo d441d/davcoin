@@ -5,6 +5,7 @@ let max = 3;
 let min = 1;
 let chance = 0.50;
 let currentMod = null;
+let isLoaded = false
 
 async function update() {
   const nVal = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -23,7 +24,9 @@ async function update() {
   document.getElementById('own').textContent = "Owned: " + String(own);
   save()
 }
-setInterval(update, 500);
+if (isLoaded == true) {
+  setInterval(update, 500);
+}
 
 async function buy(v) {
   if ((v * val) < (cash + 1)) {
@@ -54,6 +57,7 @@ async function load(mod) {
     };
     document.head.appendChild(script);
   }
+  isLoaded = true
 }
 
 async function mod(mod) {
@@ -128,5 +132,3 @@ window.onload = function() {
         console.log("No data.");
     }
 }
-
-
