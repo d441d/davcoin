@@ -22,7 +22,9 @@ async function update() {
   document.getElementById('val').textContent = "Value: " + String(val);
   document.getElementById('cash').textContent = "Cash: " + String(cash);
   document.getElementById('own').textContent = "Owned: " + String(own);
-  save(currentMod)
+  if (isLoaded == true) {
+    save()
+  }
 }
 
 setInterval(update, 500);
@@ -90,13 +92,13 @@ async function mod(mod) {
     }
     currentMod = mod;
     data.mod = currentMod;
-    save(mod);
+    save();
     localStorage.setItem('data', JSON.stringify(data));
     alert('Mod added, refresh page to see changes');
   }
 }
 
-async function save(m) {
+async function save() {
   let datastr = localStorage.getItem('data');
   if (datastr) {
     try {
@@ -104,7 +106,7 @@ async function save(m) {
           val: val,
           cash: cash,
           own: own,
-          mod: m
+          mod: currentMod
       };
 
       localStorage.setItem('data', JSON.stringify(data));
