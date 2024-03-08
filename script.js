@@ -24,8 +24,11 @@ async function update() {
   document.getElementById('own').textContent = "Owned: " + String(own);
   save()
 }
-if (isLoaded == true) {
-  setInterval(update, 500);
+
+while (true) {
+  if (isLoaded == true) {
+    setInterval(update, 500);
+  }
 }
 
 async function buy(v) {
@@ -123,7 +126,7 @@ window.onload = function() {
               cash = data.cash;
               own = data.own;
               currentMod = data.mod;
-              load(currentMod)
+              load(currentMod);
             }
         } catch (error) {
             console.error("Error:", error);
@@ -132,3 +135,5 @@ window.onload = function() {
         console.log("No data.");
     }
 }
+
+
